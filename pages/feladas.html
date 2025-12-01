@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="shortcut icon" href="https://torokdavid.hu/wp-content/uploads/2021/12/ingatlan-vasarlas.jpg" type="image/x-icon">
+    <title>Hírdetés feladása</title>
+    
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Főoldal</a></li> <li><a href="feladas.html">Hirdetés feladása</a></li>
+            <li><a href="torles.html">Hirdetés törlése</a></li>
+            <li><a href="kereses.html">Keresés</a></li>
+            <li><a href="login.html">Bejelentkezés</a></li>
+        </ul>
+    </nav>
+    <h1>Hirdetés feladása</h1>
+    <form id="feladForm">
+        <label for="kategoriakFelad">Ingatlan típusa: </label>
+        <select name="kategoriak_id" id="kategoriakFelad" required>
+        </select>
+        <label for="hirdetesDatuma">Hirdetés feladásának dátuma:</label>
+        <input type="text" name="hirdetesDatuma" id="hirdetesDatuma" readonly>
+        <label for="leiras">Ingatlan leírása</label>
+        <textarea name="leiras" id="leiras" cols="30" rows="10" required></textarea>
+        <label for="tehermentes">Tehermentes: </label>
+        <label for="igen">Igen</label>
+        <input type="radio" name="tehermentes" id="igen" checked>
+        <label for="nem">Nem</label>
+        <input type="radio" name="tehermentes" id="nem"><br><br>
+        <label for="ar">Ingatlan ára:</label>
+        <input type="number" name="ar" id="ar" required>
+        <label for="kepUrl">Kép URL:</label>
+        <input type="text" name="kepUrl" id="kepUrl" required>
+        <input type="submit" value="Feladás">
+    </form>
+    <script src="../JS/feladas.js"></script>
+</body>
+</html>

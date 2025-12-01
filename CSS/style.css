@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --primary: #2c3e50;
+    --accent: #3498db;
+    --bg: #f4f7f6;
+    --white: #ffffff;
+    --text: #333;
+    --shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+* {
+    box-sizing: border-box; /* Ez kritikus: a padding nem növeli a doboz méretét */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* --- Navigáció --- */
+.navbar {
+    background-color: var(--primary);
+    padding: 1rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+}
+
+.navbar ul {
+    display: flex;       /* Flexbox a menünek */
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;     /* Ha nem fér el, törik a sor */
+    gap: 20px;
+}
+
+.navbar a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.navbar a:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    margin: 20px 0;
+    color: var(--primary);
+}
+
+/* --- Űrlapok (Reszponzív!) --- */
+form {
+    max-width: 500px;    /* NEM fix width, hanem maximum! */
+    width: 90%;          /* Mobilon kitölti a képernyő 90%-át */
+    margin: 20px auto;
+    padding: 30px;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-right: 10px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+    display: block;
+    width: 100%;         /* Kitölti a rendelkezésre álló helyet */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: inherit;
+    background-color: #fff;
+}
+
+input[type="radio"] {
+    width: auto;
+    margin-right: 15px;
+    transform: scale(1.2);
+}
+
+input[type="submit"], button {
+    background-color: var(--accent);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Képek reszponzivitása */
+img {
+    max-width: 100%;     /* Soha nem lóg ki a szülő elemből */
+    height: auto;        /* Arányosan méretezi */
+}
+
+/* --- Kártyás elrendezés (Grid) --- */
+.ingatlan-container {
+    display: grid;
+    /* Ez a varázslat: automatikusan annyi oszlop, amennyi kifér (min 300px) */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+/* --- Média lekérdezések (Mobil nézet) --- */
+@media screen and (max-width: 600px) {
+    .navbar ul {
+        flex-direction: column; /* Egymás alá kerülnek a menüpontok */
+        text-align: center;
+        gap: 10px;
+    }
+    
+    form {
+        width: 95%; /* Mobilon szélesebb legyen az űrlap */
+        padding: 15px;
+    }
+}
