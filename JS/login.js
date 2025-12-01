@@ -27,8 +27,9 @@ document.getElementById('loginForm').addEventListener('submit', function(event){
 
     if(felhasznalo){
         alert('Sikeres bejelentkezés!');
-        window.location.href = "index.html"; // átirányítás
+        window.location.href = "../index.html"; // átirányítás
     } else {
         alert('Hibás email vagy jelszó!');
     }
+
 })
