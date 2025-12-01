@@ -113,5 +113,6 @@ document.getElementById('feladForm').addEventListener('submit', function(event){
     document.dispatchEvent(new Event("ingatlanValtozott"))
     document.dispatchEvent(new Event("kategoriakValtoztak"));
     alert(`Az ingatlan ${adatok.id} azonosítón került az adatbázisba`)
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
+
 })
