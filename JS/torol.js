@@ -18,5 +18,6 @@ document.getElementById('torolForm').addEventListener('submit', function(event){
     window.dispatchEvent(new Event("ingatlanValtozas"))
 
     // vissza indexre
-    window.location.href = "index.html"
+    window.location.href = "../index.html"
+
 })
